@@ -202,14 +202,6 @@ nav.stuck{padding:1rem 4rem;background:rgba(3,5,8,.92);backdrop-filter:blur(20px
 /* Full-width project card */
 .pj.full{grid-column:1/-1}
 
-/* PROJECT 04 inner layout — fixed alignment */
-.pj04-inner{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:start}
-.pj04-preview{background:var(--bg2);border:1px solid var(--border2);border-radius:8px;padding:1.25rem;text-align:center;margin-bottom:1rem}
-.pj04-preview-label{font-family:var(--fm);font-size:.6rem;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.6rem}
-.pj04-preview-icon{font-size:2.5rem;margin-bottom:.5rem}
-.pj04-preview-title{font-family:var(--fd);font-size:.85rem;font-weight:700;margin-bottom:.3rem}
-.pj04-preview-sub{font-family:var(--fm);font-size:.65rem;color:var(--muted2);margin-bottom:1rem}
-
 /* ===== CERTS ===== */
 .cert-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
 .cc{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:1.75rem;position:relative;overflow:hidden;transition:transform .35s,border-color .35s;cursor:default}
@@ -290,10 +282,15 @@ footer .ac{color:var(--neon)}
   .sk-grid{grid-template-columns:1fr}
   .proj-grid{grid-template-columns:1fr}
   .pj.full{grid-column:auto}
-  .pj04-inner{grid-template-columns:1fr}
   .cert-grid{grid-template-columns:1fr}
   .contact-layout{grid-template-columns:1fr}
   .cv-frame iframe{height:400px}
+}
+.profile-img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  border-radius:50%;
 }
 </style>
 </head>
@@ -315,7 +312,7 @@ footer .ac{color:var(--neon)}
     <a data-page="about" onclick="goTo('about')">About</a>
     <a data-page="skills" onclick="goTo('skills')">Skills</a>
     <a data-page="projects" onclick="goTo('projects')">Projects</a>
-    <a data-page="certs" onclick="goTo('certs')">Certificates</a>
+    <a data-page="certs" onclick="goTo('certs')">Certs</a>
     <a data-page="achievements" onclick="goTo('achievements')">Achievements</a>
     <a data-page="cv" onclick="goTo('cv')">CV</a>
     <a data-page="contact" onclick="goTo('contact')">Contact</a>
@@ -370,7 +367,10 @@ footer .ac{color:var(--neon)}
       <div class="about-left">
         <div class="acard-main">
           <div class="act">
-            <div class="ava"><div class="ava-ring"></div>🧠</div>
+            <div class="ava">
+  <div class="ava-ring"></div>
+  <img src="profile.png" class="profile-img">
+</div>
             <div class="avn">Manan <em>Awasthi</em></div>
             <div class="avr">B.Tech CSE · Data Science</div>
           </div>
@@ -378,7 +378,7 @@ footer .ac{color:var(--neon)}
             <div class="acrow"><span class="acri">🏫</span><div class="acrt"><strong>Lovely Professional University</strong></div></div>
             <div class="acrow"><span class="acri">📍</span><div class="acrt">Jalandhar, Punjab, India</div></div>
             <div class="acrow"><span class="acri">🎂</span><div class="acrt">Age 20 · 3rd Year Undergrad</div></div>
-            <div class="acrow"><span class="acri">🎓</span><div class="acrt">Graduating <strong>2027</strong></div></div>
+            <div class="acrow"><span class="acri">🎓</span><div class="acrt">Graduating <strong>2026</strong></div></div>
             <div class="acrow"><span class="acri">💼</span><div class="acrt"><span class="sdot"></span>Open to Internships</div></div>
           </div>
         </div>
@@ -528,7 +528,7 @@ footer .ac{color:var(--neon)}
         </div>
       </div>
 
-      <!-- PROJECT 04 — F1 Power BI Dashboard (full width) — FIXED ALIGNMENT -->
+      <!-- PROJECT 04 — F1 Power BI Dashboard (full width) -->
       <div class="pj full reveal">
         <div class="pj-tb"></div>
         <div class="pj-hd">
@@ -539,25 +539,21 @@ footer .ac{color:var(--neon)}
         </div>
         <div class="pj-body">
           <div class="pj-title">🏎️ Formula 1 Performance Intelligence Dashboard</div>
-          <div class="pj04-inner">
-            <!-- LEFT COLUMN -->
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem">
             <div>
-              <div class="pj-sec">
-                <div class="pj-sl">Objective</div>
-                <p class="pj-desc">Interactive Power BI dashboard analyzing F1 race data from 2020–2024. Surfaces performance insights across drivers, teams, and circuits through rich visual storytelling.</p>
-              </div>
-              <div class="pj-sec">
-                <div class="pj-sl">What I Built</div>
+              <div class="pj-sec"><div class="pj-sl">Objective</div><p class="pj-desc">An interactive Power BI dashboard analyzing Formula 1 race data from 2020–2024. Built to surface deep performance insights across drivers, teams, and circuits — covering race results, lap trends, pit strategies, and championship standings through rich visual storytelling.</p></div>
+              <div class="pj-sec"><div class="pj-sl">What I Built</div>
                 <ul class="pj-hls">
-                  <li class="pjhl"><span class="pja">▸</span>Multi-page dashboard: Overview, Driver Analysis, and Race Analysis</li>
-                  <li class="pjhl"><span class="pja">▸</span>Driver deep-dives: win rates, points progression, head-to-head comparisons</li>
-                  <li class="pjhl"><span class="pja">▸</span>Race analysis: lap time distributions, pit stop strategies, position changes</li>
+                  <li class="pjhl"><span class="pja">▸</span>Multi-page dashboard: Overview, Driver Analysis, and Race Analysis pages</li>
+                  <li class="pjhl"><span class="pja">▸</span>Driver performance deep-dives: win rates, points progression, head-to-head comparisons</li>
+                  <li class="pjhl"><span class="pja">▸</span>Race analysis: lap time distributions, pit stop strategies, position change charts</li>
                   <li class="pjhl"><span class="pja">▸</span>Interactive slicers for season, driver, team, and circuit filtering</li>
-                  <li class="pjhl"><span class="pja">▸</span>Custom DAX measures for rolling averages, rank calculations, and deltas</li>
+                  <li class="pjhl"><span class="pja">▸</span>Custom DAX measures for rolling averages, rank calculations, and performance deltas</li>
                 </ul>
               </div>
-              <div class="pj-sec">
-                <div class="pj-sl">Results</div>
+            </div>
+            <div>
+              <div class="pj-sec"><div class="pj-sl">Results</div>
                 <div class="pj-badges">
                   <span class="pjb r">5 Years of F1 Data</span>
                   <span class="pjb g">3 Dashboard Pages</span>
@@ -566,36 +562,15 @@ footer .ac{color:var(--neon)}
                   <span class="pjb r">Interactive Filters</span>
                 </div>
               </div>
-              <div class="pj-tech"><span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">Power Query</span><span class="tag">Data Modeling</span><span class="tag">F1 Dataset</span><span class="tag">KPI Cards</span><span class="tag">Interactive Slicers</span></div>
-            </div>
-            <!-- RIGHT COLUMN -->
-            <div>
-              <div class="pj04-preview">
-                <div class="pj04-preview-label">Live Dashboard Preview</div>
-                <div class="pj04-preview-icon">🏎️</div>
-                <div class="pj04-preview-title">Formula 1 · 2020–2024</div>
-                <div class="pj04-preview-sub">Overview · Driver Analysis · Race Analysis</div>
+              <!-- Mini preview card -->
+              <div style="margin-top:1rem;background:var(--bg2);border:1px solid var(--border2);border-radius:8px;padding:1rem;text-align:center">
+                <div style="font-family:var(--fm);font-size:.6rem;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.6rem">Live Dashboard Preview</div>
+                <div style="font-size:2.5rem;margin-bottom:.5rem">🏎️</div>
+                <div style="font-family:var(--fd);font-size:.85rem;font-weight:700;margin-bottom:.3rem">Formula 1 · 2020–2024</div>
+                <div style="font-family:var(--fm);font-size:.65rem;color:var(--muted2);margin-bottom:1rem">Overview · Driver Analysis · Race Analysis</div>
                 <a href="https://app.powerbi.com/groups/me/reports/690f5381-a598-4007-92f7-385c9743fa62/2363958b25c67a643e8c?experience=power-bi" target="_blank" rel="noopener noreferrer" class="btn-p" style="font-size:.62rem;padding:.65rem 1.5rem">Open in Power BI →</a>
               </div>
-              <!-- Stats grid -->
-              <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-top:.75rem">
-                <div style="background:var(--bg2);border:1px solid var(--border2);border-radius:6px;padding:1rem;text-align:center">
-                  <div style="font-family:var(--fd);font-size:1.4rem;font-weight:700;color:var(--neon)">5</div>
-                  <div style="font-family:var(--fm);font-size:.6rem;color:var(--muted2);margin-top:.2rem">Seasons Covered</div>
-                </div>
-                <div style="background:var(--bg2);border:1px solid var(--border2);border-radius:6px;padding:1rem;text-align:center">
-                  <div style="font-family:var(--fd);font-size:1.4rem;font-weight:700;color:var(--neon2)">3</div>
-                  <div style="font-family:var(--fm);font-size:.6rem;color:var(--muted2);margin-top:.2rem">Dashboard Pages</div>
-                </div>
-                <div style="background:var(--bg2);border:1px solid var(--border2);border-radius:6px;padding:1rem;text-align:center">
-                  <div style="font-family:var(--fd);font-size:1.4rem;font-weight:700;color:var(--neon3)">DAX</div>
-                  <div style="font-family:var(--fm);font-size:.6rem;color:var(--muted2);margin-top:.2rem">Custom Measures</div>
-                </div>
-                <div style="background:var(--bg2);border:1px solid var(--border2);border-radius:6px;padding:1rem;text-align:center">
-                  <div style="font-family:var(--fd);font-size:1.4rem;font-weight:700;color:var(--neon4)">Live</div>
-                  <div style="font-family:var(--fm);font-size:.6rem;color:var(--muted2);margin-top:.2rem">Power BI Hosted</div>
-                </div>
-              </div>
+              <div class="pj-tech" style="margin-top:1rem"><span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">Power Query</span><span class="tag">Data Modeling</span><span class="tag">F1 Dataset</span><span class="tag">KPI Cards</span><span class="tag">Interactive Slicers</span></div>
             </div>
           </div>
         </div>
