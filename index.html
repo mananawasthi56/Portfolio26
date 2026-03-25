@@ -36,21 +36,21 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;padding:1.6rem 4rem;display:
 nav.stuck{padding:1rem 4rem;background:rgba(3,5,8,.92);backdrop-filter:blur(20px);border-bottom:1px solid rgba(22,32,53,.9)}
 .nav-logo{font-family:var(--fd);font-size:.95rem;color:var(--neon);cursor:pointer;transition:opacity .3s}
 .nav-logo:hover{opacity:.7}
-.nav-links{display:flex;gap:2.5rem;align-items:center}
-.nav-links a{font-family:var(--fm);font-size:.65rem;color:var(--muted2);letter-spacing:.14em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:color .3s;position:relative;padding-bottom:2px}
+.nav-links{display:flex;gap:2rem;align-items:center}
+.nav-links a{font-family:var(--fm);font-size:.6rem;color:var(--muted2);letter-spacing:.12em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:color .3s;position:relative;padding-bottom:2px}
 .nav-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1px;background:var(--neon);transition:width .35s}
 .nav-links a:hover,.nav-links a.active{color:var(--text)}
 .nav-links a:hover::after,.nav-links a.active::after{width:100%}
-.nav-cta{font-family:var(--fm);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;padding:.55rem 1.4rem;border:1px solid rgba(0,255,170,.35);color:var(--neon);background:rgba(0,255,170,.05);cursor:pointer;transition:background .3s,border-color .3s,box-shadow .3s;border-radius:2px}
+.nav-cta{font-family:var(--fm);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;padding:.5rem 1.2rem;border:1px solid rgba(0,255,170,.35);color:var(--neon);background:rgba(0,255,170,.05);cursor:pointer;transition:background .3s,border-color .3s,box-shadow .3s;border-radius:2px}
 .nav-cta:hover{background:rgba(0,255,170,.12);border-color:var(--neon);box-shadow:0 0 20px rgba(0,255,170,.15)}
 .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;z-index:501}
 .hamburger span{width:22px;height:1.5px;background:var(--text);transition:all .3s;display:block}
 .hamburger.open span:nth-child(1){transform:rotate(45deg) translate(4.5px,4.5px)}
 .hamburger.open span:nth-child(2){opacity:0}
 .hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(4.5px,-4.5px)}
-.mob-menu{display:none;position:fixed;inset:0;z-index:499;background:rgba(3,5,8,.97);flex-direction:column;align-items:center;justify-content:center;gap:2.5rem}
+.mob-menu{display:none;position:fixed;inset:0;z-index:499;background:rgba(3,5,8,.97);flex-direction:column;align-items:center;justify-content:center;gap:2rem}
 .mob-menu.open{display:flex}
-.mob-menu a{font-family:var(--fd);font-size:2.5rem;color:var(--muted);text-decoration:none;cursor:pointer;transition:color .3s;letter-spacing:-.03em}
+.mob-menu a{font-family:var(--fd);font-size:2rem;color:var(--muted);text-decoration:none;cursor:pointer;transition:color .3s;letter-spacing:-.03em}
 .mob-menu a:hover{color:var(--neon)}
 
 /* PAGES */
@@ -102,7 +102,6 @@ nav.stuck{padding:1rem 4rem;background:rgba(3,5,8,.92);backdrop-filter:blur(20px
 @keyframes blink{50%{opacity:0}}
 .hcta{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;animation:fup .8s .35s ease both}
 @keyframes fup{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
-@keyframes fadeIn{from{opacity:0}to{opacity:1}}
 
 /* ===== ABOUT ===== */
 .about-layout{display:grid;grid-template-columns:320px 1fr;gap:4rem;align-items:start;margin-bottom:5rem}
@@ -198,7 +197,18 @@ nav.stuck{padding:1rem 4rem;background:rgba(3,5,8,.92);backdrop-filter:blur(20px
 .pjb.g{color:var(--neon);border-color:rgba(0,255,170,.3);background:rgba(0,255,170,.05)}
 .pjb.b{color:var(--neon2);border-color:rgba(0,184,255,.3);background:rgba(0,184,255,.05)}
 .pjb.p{color:var(--neon3);border-color:rgba(168,85,247,.3);background:rgba(168,85,247,.05)}
+.pjb.r{color:var(--neon4);border-color:rgba(255,107,53,.3);background:rgba(255,107,53,.05)}
 .pj-tech{display:flex;flex-wrap:wrap;gap:.4rem;padding-top:1.25rem;border-top:1px solid var(--border);margin-top:1.25rem}
+/* Full-width project card */
+.pj.full{grid-column:1/-1}
+
+/* PROJECT 04 inner layout — fixed alignment */
+.pj04-inner{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:start}
+.pj04-preview{background:var(--bg2);border:1px solid var(--border2);border-radius:8px;padding:1.25rem;text-align:center;margin-bottom:1rem}
+.pj04-preview-label{font-family:var(--fm);font-size:.6rem;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.6rem}
+.pj04-preview-icon{font-size:2.5rem;margin-bottom:.5rem}
+.pj04-preview-title{font-family:var(--fd);font-size:.85rem;font-weight:700;margin-bottom:.3rem}
+.pj04-preview-sub{font-family:var(--fm);font-size:.65rem;color:var(--muted2);margin-bottom:1rem}
 
 /* ===== CERTS ===== */
 .cert-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
@@ -215,6 +225,24 @@ nav.stuck{padding:1rem 4rem;background:rgba(3,5,8,.92);backdrop-filter:blur(20px
 .cc-desc{font-family:var(--fm);font-size:.7rem;color:var(--muted2);line-height:1.8;margin-bottom:1rem}
 .cc-tl{font-family:var(--fm);font-size:.57rem;color:var(--neon);text-transform:uppercase;letter-spacing:.1em;margin-bottom:.5rem}
 .cc-tags{display:flex;flex-wrap:wrap;gap:.4rem}
+
+/* ===== ACHIEVEMENTS ===== */
+.ach-grid{display:flex;flex-direction:column;gap:1.25rem;max-width:900px}
+.ach-card{display:flex;align-items:center;gap:1.25rem;background:var(--card);border:1px solid var(--border);border-radius:10px;padding:1.25rem 1.5rem;position:relative;overflow:hidden;transition:transform .35s,border-color .35s,box-shadow .35s}
+.ach-card::after{content:'';position:absolute;top:0;left:0;right:0;height:1.5px;background:linear-gradient(90deg,var(--neon),var(--neon2));transform:scaleX(0);transform-origin:left;transition:transform .4s}
+.ach-card:hover{border-color:rgba(0,255,170,.25);transform:translateY(-3px);box-shadow:0 15px 40px rgba(0,255,170,.06)}
+.ach-card:hover::after{transform:scaleX(1)}
+.ach-icon{width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.3rem;background:var(--card2);border:1px solid var(--border2);flex-shrink:0;transition:transform .35s}
+.ach-card:hover .ach-icon{transform:scale(1.1) rotate(-5deg)}
+.ach-text{flex:1}
+.ach-title{font-weight:700;font-size:.95rem;margin-bottom:.3rem}
+.ach-desc{font-family:var(--fm);font-size:.7rem;color:var(--muted2);line-height:1.6}
+.ach-year{font-family:var(--fm);font-size:.62rem;color:var(--neon2);background:rgba(0,184,255,.08);border:1px solid rgba(0,184,255,.2);padding:.35rem .85rem;border-radius:100px;white-space:nowrap}
+
+/* ===== CV ===== */
+.cv-buttons{display:flex;gap:1rem;margin-bottom:2rem;flex-wrap:wrap}
+.cv-frame{width:100%;max-width:900px;border:1px solid var(--border);border-radius:10px;overflow:hidden}
+.cv-frame iframe{width:100%;height:650px;border:none;display:block}
 
 /* ===== CONTACT ===== */
 .contact-layout{display:grid;grid-template-columns:1fr 1.15fr;gap:4rem;align-items:start}
@@ -261,94 +289,11 @@ footer .ac{color:var(--neon)}
   .drives{grid-template-columns:1fr 1fr}
   .sk-grid{grid-template-columns:1fr}
   .proj-grid{grid-template-columns:1fr}
+  .pj.full{grid-column:auto}
+  .pj04-inner{grid-template-columns:1fr}
   .cert-grid{grid-template-columns:1fr}
   .contact-layout{grid-template-columns:1fr}
-}
-/* CV PAGE */
-.cv-buttons{
-  display:flex;
-  gap:20px;
-  margin-top:30px;
-  margin-bottom:30px;
-}
-
-.cv-frame{
-  width:100%;
-  max-width:900px;
-  margin:auto;
-  border:1px solid var(--border);
-  border-radius:10px;
-  overflow:hidden;
-}
-
-.cv-frame iframe{
-  width:100%;
-  height:650px;
-  border:none;
-}
-/* Achievements Section */
-.ach-grid{
-  display:flex;
-  flex-direction:column;
-  gap:20px;
-  margin-top:40px;
-  max-width:900px;
-}
-
-.ach-card{
-  display:flex;
-  align-items:center;
-  gap:18px;
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:10px;
-  padding:20px 24px;
-  position:relative;
-  transition:all .35s ease;
-}
-
-.ach-card:hover{
-  border-color:rgba(0,255,170,.3);
-  transform:translateY(-4px);
-  box-shadow:0 15px 40px rgba(0,255,170,.08);
-}
-
-.ach-icon{
-  width:50px;
-  height:50px;
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:22px;
-  background:var(--card2);
-  border:1px solid var(--border2);
-}
-
-.ach-text{
-  flex:1;
-}
-
-.ach-title{
-  font-family:var(--ff);
-  font-weight:600;
-  font-size:16px;
-  margin-bottom:4px;
-}
-
-.ach-desc{
-  font-family:var(--fm);
-  font-size:13px;
-  color:var(--muted2);
-}
-
-.ach-year{
-  font-family:var(--fm);
-  font-size:12px;
-  color:var(--neon2);
-  background:rgba(0,184,255,.1);
-  padding:6px 12px;
-  border-radius:20px;
+  .cv-frame iframe{height:400px}
 }
 </style>
 </head>
@@ -357,13 +302,11 @@ footer .ac{color:var(--neon)}
 <div id="cur"></div>
 <div id="cur-ring"></div>
 
-<!-- TRANSITION OVERLAY -->
 <div id="tov">
   <div class="ts"></div><div class="ts"></div><div class="ts"></div><div class="ts"></div>
   <div class="ts"></div><div class="ts"></div><div class="ts"></div><div class="ts"></div>
 </div>
 
-<!-- NAV -->
 <!-- NAV -->
 <nav id="nav">
   <div class="nav-logo" onclick="goTo('home')">_manan.ds</div>
@@ -381,7 +324,6 @@ footer .ac{color:var(--neon)}
   <div class="hamburger" id="hbg"><span></span><span></span><span></span></div>
 </nav>
 
-<!-- MOBILE MENU -->
 <div class="mob-menu" id="mmenu">
   <a onclick="goTo('home');closeMob()">Home</a>
   <a onclick="goTo('about');closeMob()">About</a>
@@ -398,9 +340,7 @@ footer .ac{color:var(--neon)}
   <div class="hero">
     <div class="hero-bg">
       <div class="hb-grid"></div>
-      <div class="hb-orb o1"></div>
-      <div class="hb-orb o2"></div>
-      <div class="hb-orb o3"></div>
+      <div class="hb-orb o1"></div><div class="hb-orb o2"></div><div class="hb-orb o3"></div>
     </div>
     <canvas id="pcanvas"></canvas>
     <div class="hc">
@@ -519,6 +459,7 @@ footer .ac{color:var(--neon)}
     <p class="ss">Real projects built from scratch — each solving a genuine data problem end to end.</p>
     <div class="proj-grid">
 
+      <!-- PROJECT 01 -->
       <div class="pj reveal">
         <div class="pj-tb"></div>
         <div class="pj-hd"><span class="pj-num">PROJECT_01</span><div class="pj-links"><a href="https://github.com/mananawasthi56/CVD-Prediction-Model" target="_blank" rel="noopener noreferrer" class="pjl">🐙 GitHub</a></div></div>
@@ -539,6 +480,7 @@ footer .ac{color:var(--neon)}
         </div>
       </div>
 
+      <!-- PROJECT 02 -->
       <div class="pj reveal">
         <div class="pj-tb"></div>
         <div class="pj-hd"><span class="pj-num">PROJECT_02</span><div class="pj-links"><a href="https://github.com/mananawasthi56/Trader-Performance-vs-Market-Sentiment" target="_blank" rel="noopener noreferrer" class="pjl">🐙 GitHub</a></div></div>
@@ -559,7 +501,7 @@ footer .ac{color:var(--neon)}
         </div>
       </div>
 
-      <!-- ✅ NEW: Vibe & Go Project -->
+      <!-- PROJECT 03 -->
       <div class="pj reveal">
         <div class="pj-tb"></div>
         <div class="pj-hd">
@@ -581,25 +523,80 @@ footer .ac{color:var(--neon)}
               <li class="pjhl"><span class="pja">▸</span>CI/CD pipeline with GitHub Actions — auto deploys to Vercel on every push to main</li>
             </ul>
           </div>
-          <div class="pj-sec"><div class="pj-sl">Results</div>
-            <div class="pj-badges">
-              <span class="pjb g">Deployed on Vercel</span>
-              <span class="pjb b">Full Auth + OTP</span>
-              <span class="pjb p">AI-Powered</span>
-              <span class="pjb g">MongoDB Atlas</span>
-              <span class="pjb b">CI/CD Pipeline</span>
-            </div>
+          <div class="pj-sec"><div class="pj-sl">Results</div><div class="pj-badges"><span class="pjb g">Deployed on Vercel</span><span class="pjb b">Full Auth + OTP</span><span class="pjb p">AI-Powered</span><span class="pjb g">MongoDB Atlas</span><span class="pjb b">CI/CD Pipeline</span></div></div>
+          <div class="pj-tech"><span class="tag">Next.js</span><span class="tag">MongoDB</span><span class="tag">Groq AI</span><span class="tag">JWT Auth</span><span class="tag">Nodemailer</span><span class="tag">OpenStreetMap</span><span class="tag">Vercel</span><span class="tag">Docker</span><span class="tag">GitHub Actions</span></div>
+        </div>
+      </div>
+
+      <!-- PROJECT 04 — F1 Power BI Dashboard (full width) — FIXED ALIGNMENT -->
+      <div class="pj full reveal">
+        <div class="pj-tb"></div>
+        <div class="pj-hd">
+          <span class="pj-num">PROJECT_04</span>
+          <div class="pj-links">
+            <a href="https://app.powerbi.com/groups/me/reports/690f5381-a598-4007-92f7-385c9743fa62/2363958b25c67a643e8c?experience=power-bi" target="_blank" rel="noopener noreferrer" class="pjl">📊 Live Dashboard</a>
           </div>
-          <div class="pj-tech">
-            <span class="tag">Next.js</span>
-            <span class="tag">MongoDB</span>
-            <span class="tag">Groq AI</span>
-            <span class="tag">JWT Auth</span>
-            <span class="tag">Nodemailer</span>
-            <span class="tag">OpenStreetMap</span>
-            <span class="tag">Vercel</span>
-            <span class="tag">Docker</span>
-            <span class="tag">GitHub Actions</span>
+        </div>
+        <div class="pj-body">
+          <div class="pj-title">🏎️ Formula 1 Performance Intelligence Dashboard</div>
+          <div class="pj04-inner">
+            <!-- LEFT COLUMN -->
+            <div>
+              <div class="pj-sec">
+                <div class="pj-sl">Objective</div>
+                <p class="pj-desc">Interactive Power BI dashboard analyzing F1 race data from 2020–2024. Surfaces performance insights across drivers, teams, and circuits through rich visual storytelling.</p>
+              </div>
+              <div class="pj-sec">
+                <div class="pj-sl">What I Built</div>
+                <ul class="pj-hls">
+                  <li class="pjhl"><span class="pja">▸</span>Multi-page dashboard: Overview, Driver Analysis, and Race Analysis</li>
+                  <li class="pjhl"><span class="pja">▸</span>Driver deep-dives: win rates, points progression, head-to-head comparisons</li>
+                  <li class="pjhl"><span class="pja">▸</span>Race analysis: lap time distributions, pit stop strategies, position changes</li>
+                  <li class="pjhl"><span class="pja">▸</span>Interactive slicers for season, driver, team, and circuit filtering</li>
+                  <li class="pjhl"><span class="pja">▸</span>Custom DAX measures for rolling averages, rank calculations, and deltas</li>
+                </ul>
+              </div>
+              <div class="pj-sec">
+                <div class="pj-sl">Results</div>
+                <div class="pj-badges">
+                  <span class="pjb r">5 Years of F1 Data</span>
+                  <span class="pjb g">3 Dashboard Pages</span>
+                  <span class="pjb b">Live on Power BI</span>
+                  <span class="pjb p">Custom DAX Measures</span>
+                  <span class="pjb r">Interactive Filters</span>
+                </div>
+              </div>
+              <div class="pj-tech"><span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">Power Query</span><span class="tag">Data Modeling</span><span class="tag">F1 Dataset</span><span class="tag">KPI Cards</span><span class="tag">Interactive Slicers</span></div>
+            </div>
+            <!-- RIGHT COLUMN -->
+            <div>
+              <div class="pj04-preview">
+                <div class="pj04-preview-label">Live Dashboard Preview</div>
+                <div class="pj04-preview-icon">🏎️</div>
+                <div class="pj04-preview-title">Formula 1 · 2020–2024</div>
+                <div class="pj04-preview-sub">Overview · Driver Analysis · Race Analysis</div>
+                <a href="https://app.powerbi.com/groups/me/reports/690f5381-a598-4007-92f7-385c9743fa62/2363958b25c67a643e8c?experience=power-bi" target="_blank" rel="noopener noreferrer" class="btn-p" style="font-size:.62rem;padding:.65rem 1.5rem">Open in Power BI →</a>
+              </div>
+              <!-- Stats grid -->
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-top:.75rem">
+                <div style="background:var(--bg2);border:1px solid var(--border2);border-radius:6px;padding:1rem;text-align:center">
+                  <div style="font-family:var(--fd);font-size:1.4rem;font-weight:700;color:var(--neon)">5</div>
+                  <div style="font-family:var(--fm);font-size:.6rem;color:var(--muted2);margin-top:.2rem">Seasons Covered</div>
+                </div>
+                <div style="background:var(--bg2);border:1px solid var(--border2);border-radius:6px;padding:1rem;text-align:center">
+                  <div style="font-family:var(--fd);font-size:1.4rem;font-weight:700;color:var(--neon2)">3</div>
+                  <div style="font-family:var(--fm);font-size:.6rem;color:var(--muted2);margin-top:.2rem">Dashboard Pages</div>
+                </div>
+                <div style="background:var(--bg2);border:1px solid var(--border2);border-radius:6px;padding:1rem;text-align:center">
+                  <div style="font-family:var(--fd);font-size:1.4rem;font-weight:700;color:var(--neon3)">DAX</div>
+                  <div style="font-family:var(--fm);font-size:.6rem;color:var(--muted2);margin-top:.2rem">Custom Measures</div>
+                </div>
+                <div style="background:var(--bg2);border:1px solid var(--border2);border-radius:6px;padding:1rem;text-align:center">
+                  <div style="font-family:var(--fd);font-size:1.4rem;font-weight:700;color:var(--neon4)">Live</div>
+                  <div style="font-family:var(--fm);font-size:.6rem;color:var(--muted2);margin-top:.2rem">Power BI Hosted</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -616,174 +613,51 @@ footer .ac{color:var(--neon)}
     <div class="eyebrow"><div class="el"></div>04 // certifications</div>
     <h2 class="st">Credentials</h2>
     <p class="ss">Industry-recognized certifications validating my skills and commitment to the craft.</p>
-    
     <div class="cert-grid">
-
-      <!-- Certificate 1 - Cloud Computing -->
-      <div class="cc reveal">
-        <div class="cc-top">
-          <div class="cc-icon">🏅</div>
-          <div>
-            <div class="cc-name">Cloud Computing</div>
-            <div class="cc-issuer">Issuing Organization</div>
-            <div class="cc-year">2025</div>
-          </div>
-        </div>
-        <div class="cc-desc">Comprehensive certification covering cloud computing concepts, services, architecture, and deployment models.</div>
-        <div class="cc-tl">Skills Covered</div>
-        <div class="cc-tags">
-          <span class="tag">Cloud</span>
-          <span class="tag">AWS</span>
-          <span class="tag">Azure</span>
-          <span class="tag">Virtualization</span>
-        </div>
-        <a href="https://drive.google.com/file/d/1TUHeNRHb6GOfEYzQEdpNLyYbsum22s_Z/view" 
-           target="_blank" 
-           class="btn-o" 
-           style="margin-top:1.25rem;font-size:0.65rem;padding:0.65rem 1.25rem;">
-          View Certificate →
-        </a>
-      </div>
-
-      <!-- Certificate 2 - Mastering C -->
-      <div class="cc reveal">
-        <div class="cc-top">
-          <div class="cc-icon">🏅</div>
-          <div>
-            <div class="cc-name">Mastering C: Basic to Advanced</div>
-            <div class="cc-issuer">Issuing Organization</div>
-            <div class="cc-year">2025</div>
-          </div>
-        </div>
-        <div class="cc-desc">Complete certification from basics to advanced concepts in C programming including pointers, memory management, data structures, and problem solving.</div>
-        <div class="cc-tl">Skills Covered</div>
-        <div class="cc-tags">
-          <span class="tag">C Programming</span>
-          <span class="tag">Pointers</span>
-          <span class="tag">Data Structures</span>
-          <span class="tag">Problem Solving</span>
-        </div>
-        <a href="https://drive.google.com/file/d/1AsUYV5MKWZhYt0IxVyVbFFQN_hLvuzuV/view" 
-           target="_blank" 
-           class="btn-o" 
-           style="margin-top:1.25rem;font-size:0.65rem;padding:0.65rem 1.25rem;">
-          View Certificate →
-        </a>
-      </div>
-
-      <!-- Certificate 3 - Mastering Gen AI -->
-      <div class="cc reveal">
-        <div class="cc-top">
-          <div class="cc-icon">🏅</div>
-          <div>
-            <div class="cc-name">Mastering Generative AI</div>
-            <div class="cc-issuer">Udemy</div>
-            <div class="cc-year">2025</div>
-          </div>
-        </div>
-        <div class="cc-desc">Hands-on certification covering Generative AI concepts, prompt engineering, LLMs, and building AI-powered applications.</div>
-        <div class="cc-tl">Skills Covered</div>
-        <div class="cc-tags">
-          <span class="tag">Generative AI</span>
-          <span class="tag">Prompt Engineering</span>
-          <span class="tag">LLMs</span>
-          <span class="tag">AI Applications</span>
-        </div>
-        <a href="https://drive.google.com/file/d/12-Y7h9uW7SuDLAB4Ji3SSwXoVL-mDHBc/view" 
-           target="_blank" 
-           class="btn-o" 
-           style="margin-top:1.25rem;font-size:0.65rem;padding:0.65rem 1.25rem;">
-          View Certificate →
-        </a>
-      </div>
-
+      <div class="cc reveal"><div class="cc-top"><div class="cc-icon">🏅</div><div><div class="cc-name">Cloud Computing</div><div class="cc-issuer">Issuing Organization</div><div class="cc-year">2025</div></div></div><div class="cc-desc">Comprehensive certification covering cloud computing concepts, services, architecture, and deployment models.</div><div class="cc-tl">Skills Covered</div><div class="cc-tags"><span class="tag">Cloud</span><span class="tag">AWS</span><span class="tag">Azure</span><span class="tag">Virtualization</span></div><a href="https://drive.google.com/file/d/1TUHeNRHb6GOfEYzQEdpNLyYbsum22s_Z/view" target="_blank" class="btn-o" style="margin-top:1.25rem;font-size:.65rem;padding:.65rem 1.25rem;display:inline-block">View Certificate →</a></div>
+      <div class="cc reveal"><div class="cc-top"><div class="cc-icon">🏅</div><div><div class="cc-name">Mastering C: Basic to Advanced</div><div class="cc-issuer">Issuing Organization</div><div class="cc-year">2025</div></div></div><div class="cc-desc">Complete certification from basics to advanced C programming including pointers, memory management, data structures, and problem solving.</div><div class="cc-tl">Skills Covered</div><div class="cc-tags"><span class="tag">C Programming</span><span class="tag">Pointers</span><span class="tag">Data Structures</span><span class="tag">Problem Solving</span></div><a href="https://drive.google.com/file/d/1AsUYV5MKWZhYt0IxVyVbFFQN_hLvuzuV/view" target="_blank" class="btn-o" style="margin-top:1.25rem;font-size:.65rem;padding:.65rem 1.25rem;display:inline-block">View Certificate →</a></div>
+      <div class="cc reveal"><div class="cc-top"><div class="cc-icon">🏅</div><div><div class="cc-name">Mastering Generative AI</div><div class="cc-issuer">Udemy</div><div class="cc-year">2025</div></div></div><div class="cc-desc">Hands-on certification covering Generative AI concepts, prompt engineering, LLMs, and building AI-powered applications.</div><div class="cc-tl">Skills Covered</div><div class="cc-tags"><span class="tag">Generative AI</span><span class="tag">Prompt Engineering</span><span class="tag">LLMs</span><span class="tag">AI Applications</span></div><a href="https://drive.google.com/file/d/12-Y7h9uW7SuDLAB4Ji3SSwXoVL-mDHBc/view" target="_blank" class="btn-o" style="margin-top:1.25rem;font-size:.65rem;padding:.65rem 1.25rem;display:inline-block">View Certificate →</a></div>
     </div>
   </div>
   <footer><p>Designed &amp; built by <span class="ac">Manan Awasthi</span> · 2025</p></footer>
-
 </div>
-<!-- Achievements -->
+
+<!-- ACHIEVEMENTS -->
 <div class="page" id="page-achievements">
   <div class="pi">
     <button class="back-btn" onclick="goTo('home')">← Back</button>
-
     <div class="eyebrow"><div class="el"></div>07 // achievements</div>
     <h2 class="st">Achievements</h2>
     <p class="ss">Milestones and accomplishments in coding, data science, and development.</p>
-
     <div class="ach-grid">
-
-      <div class="ach-card reveal">
-        <div class="ach-icon">🔥</div>
-        <div class="ach-text">
-          <div class="ach-title">150+ LeetCode Questions Solved</div>
-          <div class="ach-desc">Solved 150+ Data Structures and Algorithms problems on LeetCode.</div>
-        </div>
-        <div class="ach-year">2025</div>
-      </div>
-
-      <div class="ach-card reveal">
-        <div class="ach-icon">🏆</div>
-        <div class="ach-text">
-          <div class="ach-title">1000+ Rating on Codeforces</div>
-          <div class="ach-desc">Achieved 1000+ rating on Codeforces through competitive programming contests.</div>
-        </div>
-        <div class="ach-year">2025</div>
-      </div>
-
-      <div class="ach-card reveal">
-        <div class="ach-icon">🧠</div>
-        <div class="ach-text">
-          <div class="ach-title">Machine Learning Projects</div>
-          <div class="ach-desc">Built ML projects like CVD Prediction and Salary Data Analysis.</div>
-        </div>
-        <div class="ach-year">2025</div>
-      </div>
-
-      <div class="ach-card reveal">
-        <div class="ach-icon">🌐</div>
-        <div class="ach-text">
-          <div class="ach-title">Full Stack Web Application</div>
-          <div class="ach-desc">Developed GoAndVibe full-stack travel recommendation platform.</div>
-        </div>
-        <div class="ach-year">2026</div>
-      </div>
-
-     <div class="ach-card reveal">
-        <div class="ach-icon">📜</div>
-        <div class="ach-text">
-          <div class="ach-title">Industry Certifications</div>
-          <div class="ach-desc">Completed certifications in Generative AI, Cloud Computing, and C Programming.</div>
-        </div>
-        <div class="ach-year">2025</div>
-      </div>
-
+      <div class="ach-card reveal"><div class="ach-icon">🔥</div><div class="ach-text"><div class="ach-title">150+ LeetCode Questions Solved</div><div class="ach-desc">Solved 150+ Data Structures and Algorithms problems on LeetCode.</div></div><div class="ach-year">2025</div></div>
+      <div class="ach-card reveal"><div class="ach-icon">🏆</div><div class="ach-text"><div class="ach-title">1000+ Rating on Codeforces</div><div class="ach-desc">Achieved 1000+ rating on Codeforces through competitive programming contests.</div></div><div class="ach-year">2025</div></div>
+      <div class="ach-card reveal"><div class="ach-icon">🧠</div><div class="ach-text"><div class="ach-title">Machine Learning Projects</div><div class="ach-desc">Built ML projects like CVD Prediction and Trader Sentiment Analysis.</div></div><div class="ach-year">2025</div></div>
+      <div class="ach-card reveal"><div class="ach-icon">🌐</div><div class="ach-text"><div class="ach-title">Full Stack Web Application</div><div class="ach-desc">Developed GoAndVibe full-stack travel recommendation platform with AI.</div></div><div class="ach-year">2026</div></div>
+      <div class="ach-card reveal"><div class="ach-icon">📜</div><div class="ach-text"><div class="ach-title">Industry Certifications</div><div class="ach-desc">Completed certifications in Generative AI, Cloud Computing, and C Programming.</div></div><div class="ach-year">2025</div></div>
     </div>
   </div>
+  <footer><p>Designed &amp; built by <span class="ac">Manan Awasthi</span> · 2025</p></footer>
 </div>
-<!--cv-->
 
+<!-- CV -->
 <div class="page" id="page-cv">
   <div class="pi">
     <button class="back-btn" onclick="goTo('home')">← Back</button>
-
     <div class="eyebrow"><div class="el"></div>06 // resume</div>
     <h2 class="st">Curriculum Vitae</h2>
     <p class="ss">View or download my resume below.</p>
-
-    <!-- Buttons -->
     <div class="cv-buttons">
       <a href="campus cv.pdf" target="_blank" class="btn-p">View CV</a>
       <a href="campus cv.pdf" download class="btn-o">Download CV</a>
     </div>
-
-    <!-- PDF Preview -->
     <div class="cv-frame">
       <iframe src="campus cv.pdf"></iframe>
     </div>
-
   </div>
+  <footer><p>Designed &amp; built by <span class="ac">Manan Awasthi</span> · 2025</p></footer>
 </div>
+
 <!-- CONTACT -->
 <div class="page" id="page-contact">
   <div class="pi">
@@ -822,12 +696,12 @@ let mx=0,my=0,rx=0,ry=0;
 document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY},{passive:true});
 function animCursor(){
   cur.style.transform=`translate(calc(${mx}px - 50%), calc(${my}px - 50%))`;
-  rx+=(mx-rx)*.1; ry+=(my-ry)*.1;
+  rx+=(mx-rx)*.1;ry+=(my-ry)*.1;
   ring.style.transform=`translate(calc(${rx}px - 50%), calc(${ry}px - 50%))`;
   requestAnimationFrame(animCursor);
 }
 animCursor();
-document.querySelectorAll('a,button,.acard,.skc,.pj,.cc,.drive,.clink').forEach(el=>{
+document.querySelectorAll('a,button,.acard,.skc,.pj,.cc,.drive,.clink,.ach-card').forEach(el=>{
   el.addEventListener('mouseenter',()=>ring.classList.add('hov'),{passive:true});
   el.addEventListener('mouseleave',()=>ring.classList.remove('hov'),{passive:true});
 });
